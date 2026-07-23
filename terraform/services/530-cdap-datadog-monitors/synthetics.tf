@@ -7,8 +7,8 @@ module "synthetics" {
   notify               = module.common_datadog_monitors.notify
   min_failure_duration = local.monitor_config.synthetics.min_failure_duration
 
-  tests = {
-    private_location_connectivity = {
+  tests = [
+    {
       name    = "private-location-connectivity"
       subtype = "tcp"
       request_definition = {
@@ -23,5 +23,5 @@ module "synthetics" {
         }
       ]
     }
-  }
+  ]
 }

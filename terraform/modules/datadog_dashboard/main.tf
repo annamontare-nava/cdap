@@ -527,6 +527,7 @@ resource "datadog_dashboard" "application_metrics_dashboard" {
               formula {
                 formula_expression = "query1 / query2"
               }
+              display_type = "bars"
             }
           }
         }

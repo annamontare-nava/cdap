@@ -521,7 +521,7 @@ resource "datadog_dashboard" "application_metrics_dashboard" {
               query {
                 metric_query {
                   name  = "query2"
-                  query = "sum:trace.${var.apm_primary_operation}.hits{application:${var.app}, $environment}.as_count()"
+                  query = "sum:trace.${var.apm_primary_operation}.hits{application:${var.app}, $environment} by {service}.as_count()"
                 }
               }
               formula {
